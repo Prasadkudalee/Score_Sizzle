@@ -1,0 +1,40 @@
+[
+    {
+        "inning": 1,
+        "bat": "",
+        "bowl": "",
+        "runs": 0,
+        "wickets": 0,
+        "retired_hurt": 0,
+        "overs": 0.0,
+        "timeline": [],
+        "batting": [],
+        "bowling": [],
+        "extras": {
+            "wide": 0,
+            "no_ball": 0,
+            "byes": 0,
+            "leg_byes": 0,
+            "penalty": 0
+        }
+    },
+    {
+        "inning": 2,
+        "bat": "",
+        "bowl": "",
+        "runs": 0,
+        "wickets": 0,
+        "retired_hurt": 0,
+        "overs": 0.0,
+        "timeline": [],
+        "batting": [],
+        "bowling": [],
+        "extras": {
+            "wide": 0,
+            "no_ball": 0,
+            "byes": 0,
+            "leg_byes": 0,
+            "penalty": 0
+        }
+    }
+]

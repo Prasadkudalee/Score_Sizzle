@@ -1,0 +1,162 @@
+<div id="profile-icon">
+    <button></button>
+</div>
+<ul id="dropdown">
+    <div id="title-text"></div>
+    <li class="sub-item">
+        <span class="material-icons">account_circle</span>
+        <p>My Profile</p>
+    </li>
+    <li class="sub-item">
+        <span class="material-icons">feedback</span>
+        <p>Feedback</p>
+    </li>
+    <li class="sub-item" onclick="logout()">
+        <span class="material-icons">logout</span>
+        <p>Logout</p>
+    </li>
+</ul>
+
+<style>
+    .profile-menu {
+        position: absolute;
+        right: 20px;
+        transition: .25s ease-in;
+    }
+
+    #profile-icon {
+        border: 2px solid rgb(122, 131, 221);
+        border-radius: 50px;
+        width: 49px;
+        height: 49px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #profile-icon:active {
+        transition: 0.3s ease-out;
+        transform: scale(1.2);
+    }
+
+    #profile-icon button {
+        background-color: rgb(122, 131, 221);
+        font-family: var(--poppins-font);
+        color: white;
+        font-weight: bold;
+        font-size: 17px;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        border: none;
+        border-radius: 50px;
+    }
+
+    #dropdown {
+        right: 5px;
+        top: 60px;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        background-color: white;
+        width: 180px;
+        border-radius: 7px;
+        padding: 10px 15px;
+        box-shadow: 0px 0px 50px rgba(20, 18, 18, 0.25);
+        visibility: hidden;
+    }
+
+    #title-text {
+        font-family: var(--raleway-font);
+        font-weight: 600;
+        font-size: 16px;
+        color: rgb(96, 96, 96);
+        margin: 10px 0px;
+        word-spacing: 9999rem;
+        overflow: hidden;
+        line-height: 1.5;
+        padding-bottom: 12px;
+        border-bottom: 2px solid rgb(122, 131, 221);
+    }
+
+    .sub-item {
+        width: 120px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        cursor: pointer;
+        padding: 0.5rem 0px;
+    }
+
+    .sub-item p {
+        font-size: 16px;
+        font-weight: 600;
+        font-family: var(--raleway-font);
+        color: rgb(96, 96, 96);
+        cursor: pointer;
+    }
+
+    .sub-item .material-icons {
+        font-size: 27px;
+        color: rgb(96, 96, 96);
+    }
+
+    .sub-item:hover .material-icons {
+        color: var(--primary-color);
+        transform: scale(1.05) translateY(-2px);
+        transition: all 0.3s ease-out;
+    }
+
+    .sub-item:hover p {
+        color: var(--primary-color);
+    }
+</style>
+
+<script>
+    cookies = document.cookie.split(';')
+    let name = cookies[1].substring(cookies[1].indexOf('=') + 1)
+    $('#profile-icon button').html(name.split(" ")[0].charAt(0) + name.split(" ")[1].charAt(0))
+    $('#title-text').html(name)
+
+    // profile-logic
+    let flag = false;
+    $("#profile-icon").click((event) => {
+        if (flag) {
+            $("#dropdown").css("visibility", "hidden");
+            flag = false;
+        } else {
+            $("#dropdown").css("visibility", "visible");
+            flag = true;
+        }
+        event.stopPropagation();
+    });
+
+    $("#dropdown").click((event) => {
+        event.stopPropagation();
+    });
+
+    $(document).click(function (event) {
+        $("#dropdown").css("visibility", "hidden");
+        flag = false;
+    });
+
+    function logout() {
+        Swal.fire({
+            icon: 'question',
+            title: 'Are you sure?',
+            confirmButtonText: 'Yes',
+            confirmButtonColor: '#4153f1',
+            showDenyButton: true,
+            denyButtonText: 'No'
+        }).then((res) => {
+            if (res.isConfirmed) {
+                let cookies = document.cookie.split(';')
+                cookies.forEach(element => {
+                    document.cookie = `${element};path=/;expires=Sun, 31 Dec 2000 23:59:59 GMT`
+                })
+                window.location.replace("/get-started")
+            }
+        })
+    }
+</script>

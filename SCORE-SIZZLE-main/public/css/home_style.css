@@ -1,0 +1,422 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --primary-color: rgb(65, 84, 241);
+    --primary-dark-color: rgb(1, 41, 112);
+    --poppins-font: 'Poppins', sans-serif;
+    --raleway-font: 'Raleway', sans-serif;
+    scroll-behavior: smooth;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: white;
+    color: black;
+    user-select: none;
+    font-family: var(--poppins-font);
+}
+
+/* Navigation Bar */
+#navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    height: 70px;
+    box-shadow: 0px 5px 15px rgb(0 0 0 / 10%);
+    background-color: white;
+    z-index: 9;
+}
+
+#navbar ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    list-style: none;
+    font-family: var(--raleway-font);
+    justify-content: center;
+}
+
+#navbar ul a {
+    text-decoration: none;
+    color: black;
+}
+
+#navbar ul li {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.brand {
+    display: flex;
+    margin-left: 20px;
+    align-items: center;
+    font-weight: bold;
+    font-size: 27px;
+    font-family: var(--poppins-font);
+    color: black;
+    width: 300px;
+}
+
+.brand span {
+    color: var(--primary-color);
+}
+
+.brand img {
+    padding: 10px;
+    width: 35px;
+    font-weight: bolder;
+}
+
+#navbar ul li a {
+    text-decoration: none;
+    margin: 10px 20px;
+    transition: 0.1s ease-in;
+}
+
+#navbar ul li a:hover {
+    color: var(--primary-color);
+}
+
+.getStartedButton {
+    margin-left: 60px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 4px;
+    padding: 8px 25px;
+    white-space: nowrap;
+    transition: 0.5s;
+    font-size: 14px;
+    font-weight: 600;
+    display: inline-block;
+    font-family: var(--poppins-font);
+    border: none;
+}
+
+.getStartedButton:hover {
+    transition: 0.3s;
+    cursor: pointer;
+    background-color: black;
+}
+
+section {
+    overflow: hidden;
+    display: block;
+}
+
+/* Home Section */
+#Home::before {
+    content: "";
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+#Home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: url('../img/home-bg.jpg') top center no-repeat;
+    background-size: cover;
+}
+
+@keyframes container {
+    0% {
+        opacity: 0;
+        transform: scale(1.2, 1.2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+}
+
+.container {
+    z-index: 2;
+    width: 80vw;
+    height: 300px;
+    animation: container .5s ease-in;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.headline {
+    width: 50%;
+    font-family: var(--raleway-font);
+}
+
+.headline h1 {
+    text-align: left;
+    font-size: 70px;
+    margin-bottom: 10px;
+}
+
+.headline h2 {
+    font-size: 40px;
+    line-height: 1.25;
+}
+
+#Home .getStartedButton {
+    font-family: var(--poppins-font);
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 4px;
+    transition: 0.5s;
+    margin-top: 30px;
+    margin-left: 0;
+    color: #fff;
+    background: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+#Home .getStartedButton:hover {
+    background-color: transparent;
+    border: 2px solid white;
+}
+
+#About {
+    height: fit-content;
+    padding: 100px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sectionTitle {
+    font-size: 35px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+#About p {
+    display: block;
+    text-align: justify;
+    line-height: 1.5;
+    font-weight: 500;
+    margin-bottom: 15px;
+    width: 80%;
+    font-size: 18px;
+    font-family: var(--raleway-font);
+}
+
+.hline {
+    display: block;
+    margin: 15px 0;
+    margin-bottom: 25px;
+    height: 3px;
+    width: 50px;
+    background-color: rgb(65, 84, 241);
+}
+
+#Services:before {
+    content: "";
+    background: rgb(27, 27, 27);
+}
+
+#Services {
+    background: rgb(27, 27, 27);
+    height: fit-content;
+    padding: 100px 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.servicesContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.servicesContainer p {
+    display: block;
+    text-align: justify;
+    line-height: 1.5;
+    font-weight: 500;
+    margin-bottom: 15px;
+    width: 80%;
+    font-size: 18px;
+    font-family: var(--raleway-font);
+}
+
+#TAC {
+    height: fit-content;
+    padding: 100px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#TAC p {
+    display: block;
+    text-align: justify;
+    line-height: 1.5;
+    font-weight: 500;
+    margin-bottom: 15px;
+    width: 80%;
+    font-size: 18px;
+    font-family: var(--raleway-font);
+}
+
+#Team {
+    background: rgb(27, 27, 27);
+    height: fit-content;
+    padding: 100px 0px;
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+#Feedback {
+    /* background: rgb(27, 27, 27);
+    color: white; */
+    height: fit-content;
+    padding: 100px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#Feedback p {
+    text-align: center;
+    width: 80%;
+    font-size: 20px;
+    font-family: var(--raleway-font);
+}
+
+#feedback_form {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.feedback__input {
+    width: 100%;
+    font-family: var(--poppins-font);
+    padding: 1rem;
+    border-radius: .5rem;
+    border: 2px solid rgb(65, 84, 241);
+    /* background-color: rgb(27, 27, 27); */
+    /* border: 2px solid white; */
+    color: white;
+    outline: none;
+    margin-top: 10px;
+    font-size: 18px;
+    box-sizing: border-box;
+}
+
+.feedback__button {
+    display: block;
+    outline: none;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 0px auto;
+    margin-top: 30px;
+    border-radius: 40px;
+    border: none;
+    background-color: rgb(65, 84, 241);
+    color: #ffffff;
+    font-size: 15px;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    padding: 9px 34px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: 0.3s ease-in;
+}
+
+.feedback__button:hover {
+    background-color: black;
+}
+
+.content1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 70px;
+    margin-top: 40px;
+}
+
+.content1 .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 150px;
+}
+
+.content1 .content .sci {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.content1 .content .imgBx {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.content1 .content .imgBx img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
+
+.content1 .content .sci a {
+    text-decoration: none;
+    color: white;
+    font-size: 22px;
+    text-align: center;
+    transition: 0.3s ease-in;
+}
+
+.content1 .sci a:hover {
+    color: rgb(185, 185, 185);
+}
+
+h5 {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-family: var(--raleway-font);
+    text-transform: uppercase;
+    word-spacing: 9999em;
+    line-height: 1.3;
+    margin-bottom: 15px;
+}

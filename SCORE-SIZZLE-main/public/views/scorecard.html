@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCORE-SIZZLE - Live Scorecard</title>
+    <link rel="icon" href="../img/brand.png" type="image/icon type">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/preloader_style.css">
+    <link rel="stylesheet" href="../css/scorecard_style.css">
+</head>
+
+<body>
+    <div id="preloader">
+        <div class="lds-ripple">
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <div class="overlay">
+        <div class="players-popup">
+            <span class="status"></span>
+            <div class="team-name">
+                <div><img src="../img/ball-icon.ico"></div>
+                <span></span>
+            </div>
+            <ul class="players">
+            </ul>
+            <div class="info"><span></span><button>OK</button></div>
+        </div>
+    </div>
+
+    <nav>
+        <div class="line1">
+            <span id="live">LIVE</span>
+            <div class="header">
+                <div id="t1-block">
+                    <div><img src="" alt=""></div>
+                    <span class="team-name"></span>
+                </div>
+                <img id="brand" src="../img/brand.png" alt="">
+                <div id="t2-block">
+                    <div><img src="" alt=""></div>
+                    <span class="team-name"></span>
+                </div>
+            </div>
+            <button class="share-link">Share Link</button>
+            <div class="profile-menu"></div>
+        </div>
+        <div class="line2">
+            <div>
+                <pre>Date & Time - </pre>
+                <span id="date"></span>
+            </div>
+            <div>
+                <pre id="match-title"></pre>
+                <span id="inning"></span>
+            </div>
+            <div>
+                <pre>Toss - </pre>
+                <span id="toss"></span>
+            </div>
+            <div class="target">
+                <pre>Target - </pre>
+                <span id="target"></span>
+            </div>
+            <div>
+                <pre>Venue - </pre>
+                <span id="venue"></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="score-section">
+        <div class="side-pane">
+            <div id="batsman1" class="divider">
+                <span class="name"></span>
+                <span class="m-inc runs"></span>
+                <span>(</span><span class="balls"></span><span>)</span>
+                <span>*</span>
+            </div>
+            <div id="batsman2" class="divider">
+                <span class="name"></span>
+                <span class="m-inc runs"></span>
+                <span>(</span><span class="balls"></span><span>)</span>
+                <span>*</span>
+            </div>
+        </div>
+        <div class="main-score-pane">
+            <div></div>
+            <div>
+                <span class="runs"></span>
+                <span>/</span>
+                <span class="wickets"></span>
+            </div>
+            <div class="overs"></div>
+        </div>
+        <div class="side-pane">
+            <div class="divider">
+                <span>RUN RATE</span>
+                <span id="run-rate" class="m-inc">0.0</span>
+            </div>
+            <div id="bowler" class="divider">
+                <span class="name"></span>
+                <span class="m-inc runs"></span>
+                <span>-</span>
+                <span class="wickets"></span>
+                <span>(</span><span class="overs"></span><span>)</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="main-area">
+        <section class="left-side">
+            <section class="next-ball-section">
+                <div class="heading">
+                    <span>Next Ball</span>
+                </div>
+                Runs
+                <div class="runs-area">
+                </div>
+                Wicket
+                <div class="wickets-area">
+                </div>
+                Extras
+                <div class="extras-area">
+                </div>
+                <div class="extras-dropdown runs-area">
+                </div>
+            </section>
+            <section class="match-info">
+                <div class="heading">
+                    <span>Match Info</span>
+                </div>
+                <div class="remaining"><span></span> NEED <b class="info"></b> RUNS IN <b class="info"></b> BALLS</div>
+                <div class="required-rr">
+                    <span>Required Run Rate - </span>
+                    <span class="info">0.0</span>
+                </div>
+                <div class="title_div">
+                    <span>Match Title - </span>
+                    <span class="info"></span>
+                </div>
+                <div class="innings_div">
+                    <span>Innings -</span>
+                    <span class="info"></span>
+                </div>
+                <div class="toss_div">
+                    <span>Toss - </span>
+                    <span class="info"></span>
+                </div>
+                <div class="overs">
+                    <span>Total Overs - </span>
+                    <span class="info"></span>
+                </div>
+                <div class="umpires">
+                    <span>Umpires - </span>
+                    <span class="info"></span>
+                </div>
+                <div class="dat_div">
+                    <span>Date & Time - </span>
+                    <span class="info"></span>
+                </div>
+                <div class="target">
+                    <span>Target - </span>
+                    <span class="info"></span>
+                </div>
+                <div class="venue_div">
+                    <span>Venue - </span>
+                    <span class="info"></span>
+                </div>
+                <div class="streamed_by">
+                    <span>Streamed By - </span>
+                    <span class="info"></span>
+                </div>
+            </section>
+            <section class="advertisement">
+                <div id="l1">YOU TOO CAN CREATE AN SHARE YOUR OWN CRICKET SCORECARDS</div>
+                <div id="l2">Join SCORE-SIZZLE Now!</div>
+                <a href="/get-started" target="_blank"><button class="getStartedButton">Get Started</button></a>
+            </section>
+        </section>
+
+        <section class="scorecard-section">
+            <div class="inningButtons">
+                <button onclick="switchTab(0)" class="active"></button>
+                <button onclick="switchTab(1)"></button>
+            </div>
+            <span id="hline"></span>
+            <div class="tab-container">
+                <div class="inningContent" id="tab1">
+                    <div class="shadow">
+                        <table class="score-table t1">
+                            <tr>
+                                <th width="55.24%">Batting</th>
+                                <th width="60px">R</th>
+                                <th width="60px">B</th>
+                                <th width="60px">4s</th>
+                                <th width="60px">6s</th>
+                                <th width="90px">S/R</th>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="shadow">
+                        <table class="score-table t2">
+                            <tr>
+                                <th width="55.24%">Bowling</th>
+                                <th width="60px">O</th>
+                                <th width="60px">M</th>
+                                <th width="60px">R</th>
+                                <th width="60px">W</th>
+                                <th width="90px">Eco</th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="inningContent" id="tab2">
+                    <div class="shadow">
+                        <table class="score-table t2">
+                            <tr>
+                                <th width="55.24%">Batting</th>
+                                <th width="60px">R</th>
+                                <th width="60px">B</th>
+                                <th width="60px">4s</th>
+                                <th width="60px">6s</th>
+                                <th width="90px">S/R</th>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="shadow">
+                        <table class="score-table t1">
+                            <tr>
+                                <th width="55.24%">Bowling</th>
+                                <th width="60px">O</th>
+                                <th width="60px">M</th>
+                                <th width="60px">R</th>
+                                <th width="60px">W</th>
+                                <th width="90px">Eco</th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="overs-timeline">
+            <div class="timeline-container">
+                <div id="scroller"></div>
+            </div>
+        </section>    
+        
+    </section>
+    <section class="prediction-section" id="prediction">
+        <div class="prediction-container" id="prediction-container">
+            <div id="prediction-percentage">
+                <div class="team-probability">
+                    <div class="team-name-1" id="team1"></div>
+                    <div class="probability-value" id="team-a-probability">50%</div>
+                </div>
+                <div class="separator"></div>
+                <div class="team-probability">
+                    <div class="team-name-2" id="team2"></div>
+                    <div class="probability-value" id="team-b-probability">50%</div>
+                </div>
+            </div>
+            <div class="prediction-bar-container">
+                <div id="prediction-bar"></div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.all.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+    <script src="../js/scorecard_script.js" async></script>
+</body>
+
+</html>
