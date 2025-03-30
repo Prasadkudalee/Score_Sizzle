@@ -1,7 +1,6 @@
 # SCORE-SIZZLE
 
 SCORE-SIZZLE - Your Personalized Cricket Scoring Website<br/>
-Website URL - [https://score-go.onrender.com/](https://score-go.onrender.com/)
 
 # About Us
 
@@ -14,4 +13,4 @@ HTML, CSS, JavaScript, Node JS, Express JS, MongoDB
 
 # Screenshots
 
-You can find all the screenshots of the website here: https://rb.gy/95p51
+You can find all the screenshots of the website here: https://drive.google.com/drive/folders/1lZg0RO3GQ4tX65ENo4BEWhVT0U4saWYu?usp=sharing
